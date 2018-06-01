@@ -16,3 +16,4 @@
 
 * Integrate banks API for easy CSV transaction access
 * Create a new CSV for every import, and only grab the new data
+* Eventually develop a macOS app
