@@ -7,10 +7,10 @@
 
 **Checklist:**
 
-* :heavy_check_mark: Chase CSV support
-* :heavy_check_mark: CapitalOne CSV support
-* :heavy_check_mark: Converts to specified CSV format: **[Date, Amount, Description, Category]**
-* :heavy_check_mark: Adds positive float number for purchases, negative float numbers for refunds
+* :ballot_box_with_check: Chase CSV support
+* :ballot_box_with_check: CapitalOne CSV support
+* :ballot_box_with_check: Converts to specified CSV format: **[Date, Amount, Description, Category]**
+* :ballot_box_with_check: Adds positive float number for purchases, negative float numbers for refunds
 
 **To Do:**
 
