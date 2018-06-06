@@ -1,4 +1,4 @@
-## TransFormer: Transaction Formatter
+# TransFormer: Transaction Formatter
 ![](rm_image.jpg)
 
 **Purpose:** To make managing personal finances ***actually personal***. This means that your financial information, including all your expenses and income, isn't on some third party website. It should be super simple, without needing to worry about your bank or credit card info getting stolen by very probable cyber attacks (on Mint, for example). And as much as websites like Mint have all these privacy policies, many of us stay paranoid, but still want a modern way to manage our finances and view colorful reports.
