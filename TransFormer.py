@@ -90,22 +90,52 @@ def addTransaction(date, amount, desc, ctg, refund):
         else:
             newFileWriter.writerow([date, refund, desc, ctg])
 
+def singleTransaction():
+    print("Date (MM/DD/YY): ", end='')
+    date = input()
+    print("Credit Amount: ", end='')
+    amount = float(input())
+    print("Description: ", end='')
+    desc = input()
+    print("Category: ", end='')
+    ctg = input()
+
+    addTransaction(date, amount, desc, ctg, 0)
+    print("Transaction added!")
+
 def main():
-    """ ASK USER FOR CSV TO IMPORT """
-    count = 0
-    print ("Enter CSV filename: ", end='')
-    file = input()
+    """ ASK USER FOR TRANSACTIONS TO IMPORT """
+    print("\n////////  ///////     //     //   //     /////")
+    print("   //     //   //    / /     ///  //    /   ")
+    print("  //      ////      /   /    / // //    /////")
+    print(" //       // /     //---//   // ////       //")
+    print("//        //  /   //     //  //   //   ////    [=]\n")
 
-    try:
-        
-      if isChase(file):
-        parseChaseData(file)
-      elif isCapitalOne(file):
-        parseCapitalOneData(file)
+    print("Enter 'csv' for a csv file, 't' for single transaction, or 'e' to exit: ", end='')
+    choice = input()
+    if choice == "csv":
+        count = 0
+        print ("Enter CSV filename: ", end='')
+        file = input()
 
-    except Exception as e:
-        raise e
-        print ("An error has occured. Please try again.")
+        try:
+            
+            if isChase(file):
+                parseChaseData(file)
+            elif isCapitalOne(file):
+                parseCapitalOneData(file)
+
+        except Exception as e:
+            raise e
+            print ("An error has occured. Please try again.")
+    elif choice == "t":
+        singleTransaction()
+    elif choice == "e":
+        print("\nGoodbye!")
+        return 0
+    else:
+        print("Unrecognized input choice. Please try again.\n")
+        main()
 
     return 0
 
