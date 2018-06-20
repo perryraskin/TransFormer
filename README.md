@@ -17,5 +17,6 @@
 **To Do:**
 
 * Integrate banks API for easy CSV transaction access
+* Automatically order imported CSV by date
 * Create a new CSV for every import, and only grab the new data
 * Eventually develop a macOS/iOS app

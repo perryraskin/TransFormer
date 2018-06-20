@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 
 def isFloat(string):
     try:
@@ -23,17 +24,22 @@ def parseChaseData(file):
         next(reader)
         refund = 0
         amount = 0
+        t = 0
+        r = 0
         for row in reader:
             date = row[1]
             if float(row[4]) < 0:
                 amount = float(row[4]) + (abs(float(row[4]))*2)
                 refund = 0
+                t = t + 1
             else:
                 refund = 0 - float(row[4])
                 amount = 0
+                r = r + 1
             desc = row[3]
             ctg = row[5]
             addTransaction(date, amount, desc, ctg, refund)
+        print(t, "transactions and", r, "refunds have been added!")
 
 def isCapitalOne(file):
     first = 'Transaction Date'
@@ -51,21 +57,27 @@ def parseCapitalOneData(file):
         next(reader)
         refund = 0
         amount = 0
+        t = 0
+        r = 0
         for row in reader:
             date = row[0]
             if isFloat(row[5]):
                 amount = float(row[5])
                 refund = 0
+                t = t + 1
             else:
                 refund = float(row[6])
                 refund = refund - (2*refund)
                 amount = 0
+                r = r + 1
                 if desc.find('CAPITAL ONE MOBILE PYMT'):
                     refund = 0
+                    r = r - 1
             desc = row[3]
             ctg = row[4]
                 
             addTransaction(date, amount, desc, ctg, refund)
+        print(t, "transactions and", r, "refunds have been added!")
 
 # def isDiscover()
 
@@ -75,10 +87,8 @@ def addTransaction(date, amount, desc, ctg, refund):
         newFileWriter = csv.writer(newFile)
         if amount > 0:
             newFileWriter.writerow([date, str(amount), desc, ctg])
-            print ("New transaction added!")
         else:
             newFileWriter.writerow([date, refund, desc, ctg])
-            print ("New refund added!")
 
 def main():
     """ ASK USER FOR CSV TO IMPORT """

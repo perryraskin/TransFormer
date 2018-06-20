@@ -1,3 +1,7 @@
 Type,Trans Date,Post Date,Description,Amount,Category,Memo
 Sale,02/26/2018,05/28/2018,NEW SUPERMARKET,-18.77,Groceries
 Sale,03/06/2018,05/28/2018,CVS,-10.91,Health/medical
+Sale,02/26/2018,05/28/2018,YUMMY,8.15,Groceries
+Sale,03/06/2018,05/28/2018,HAIRCUT,54.91,Health/medical
+Sale,02/26/2018,05/28/2018,APPLE,-29.12,Groceries
+Sale,03/06/2018,05/28/2018,BEST BUY,-79.31,Health/medical
