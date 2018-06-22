@@ -105,11 +105,18 @@ def singleTransaction():
 
 def main():
     """ ASK USER FOR TRANSACTIONS TO IMPORT """
-    print("\n////////  ///////     //     //   //     /////")
-    print("   //     //   //    / /     ///  //    /   ")
-    print("  //      ////      /   /    / // //    /////")
-    print(" //       // /     //---//   // ////       //")
-    print("//        //  /   //     //  //   //   ////    [=]\n")
+    # print("\n////////  ///////     //     //   //     /////")
+    # print("   //     //   //    / /     ///  //    /   ")
+    # print("  //      ////      /   /    / // //    /////")
+    # print(" //       // /     //---//   // ////       //")
+    # print("//        //  /   //     //  //   //   ////    [=]\n")
+
+    print("\n ___________")
+    print("|           |")
+    print(" ----| |----.----.----.------.----.")
+    print("     | |    |   _|  ^  |  _  |___.")
+    print("     | |    |  | | | | |_| |_|___| [=]")
+    print("     |_|    |__| F O R M E R")
 
     print("Enter 'csv' for a csv file, 't' for single transaction, or 'e' to exit: ", end='')
     choice = input()
