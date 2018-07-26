@@ -116,7 +116,7 @@ def main():
     print(" ----| |----.----.----.------.----.")
     print("     | |    |   _|  ^  |  _  |___.")
     print("     | |    |  | | | | |_| |_|___| [=]")
-    print("     |_|    |__| F O R M E R")
+    print("     |_|    |__| F O R M E R\n")
 
     print("Enter 'csv' for a csv file, 't' for single transaction, or 'e' to exit: ", end='')
     choice = input()
