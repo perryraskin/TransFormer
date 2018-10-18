@@ -77,7 +77,7 @@ def parseCapitalOneData(file):
             ctg = row[4]
                 
             addTransaction(date, amount, desc, ctg, refund)
-        print(t, "transactions and", r, "refunds have been added!")
+        print(t, "purchases and", r, "refunds have been added!")
 
 # def isDiscover()
 
@@ -91,16 +91,28 @@ def addTransaction(date, amount, desc, ctg, refund):
             newFileWriter.writerow([date, refund, desc, ctg])
 
 def singleTransaction():
+    amount = 0
+    refund = 0
+    print("Is this a purchase (p) or a refund (r)?")
+    p_or_r = input()
+    if p_or_r == "purchase" or p_or_r == "p":
+        print("Purchase Amount: ", end='')
+        amount = float(input())
+    elif p_or_r == "refund" or  p_or_r == "r":
+        print("Refund Amount: ", end='')
+        refund = float(input())
+        refund = refund - (2*refund)
+    else:
+        print("\nInvalid input...")
+        singleTransaction()
     print("Date (MM/DD/YY): ", end='')
     date = input()
-    print("Credit Amount: ", end='')
-    amount = float(input())
     print("Description: ", end='')
     desc = input()
     print("Category: ", end='')
     ctg = input()
 
-    addTransaction(date, amount, desc, ctg, 0)
+    addTransaction(date, amount, desc, ctg, refund)
     print("Transaction added!")
 
 def main():
@@ -114,11 +126,11 @@ def main():
     print("\n ___________")
     print("|           |")
     print(" ----| |----.----.----.------.----.")
-    print("     | |    |   _|  ^  |  _  |___.")
+    print("     | |    |   _| / \ |  _  |___.")
     print("     | |    |  | | | | |_| |_|___| [=]")
     print("     |_|    |__| F O R M E R\n")
 
-    print("Enter 'csv' for a csv file, 't' for single transaction, or 'e' to exit: ", end='')
+    print("Enter 'csv' for a csv file, 't' for single transaction, or 'e' to exit: ")
     choice = input()
     if choice == "csv":
         count = 0
